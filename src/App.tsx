@@ -875,6 +875,11 @@ const CertificatesPage = () => {
       desc: 'Certificate of incorporation confirming legal entity status.',
       status: 'Available on request',
     },
+    {
+      title: 'PAN Card (Company)',
+      desc: 'Permanent Account Number (PAN) card for corporate tax identification.',
+      status: 'Available on request',
+    },
   ];
 
   return (
