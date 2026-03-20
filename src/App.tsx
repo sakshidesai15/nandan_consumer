@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, MapPin, ChevronRight, Facebook, Linkedin, Twitter, ShieldCheck, Zap, HardHat, Cpu, Globe, Home as HomeIcon } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, ChevronRight, Facebook, Linkedin, Twitter, ShieldCheck, Zap, Home as HomeIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import logo from './assets/logo.jpeg';
 
 // --- Types ---
-export type Page = 'home' | 'about' | 'services' | 'products' | 'contact' | 'privacy';
+export type Page = 'home' | 'about' | 'services' | 'products' | 'certificates' | 'contact' | 'privacy';
 
 // --- Components ---
 
@@ -23,6 +23,7 @@ const Navbar = ({ currentPage, setCurrentPage }: { currentPage: Page, setCurrent
     { label: 'About Us', value: 'about' },
     { label: 'Services', value: 'services' },
     { label: 'Products', value: 'products' },
+    { label: 'Certificates', value: 'certificates' },
     { label: 'Contact', value: 'contact' },
   ];
 
@@ -125,7 +126,7 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
               <span className="text-white font-bold text-lg uppercase tracking-wider">Nandan Consumer</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              A registered Indian company dedicated to providing high-quality consumer equipments and professional services across multiple sectors including solar, civil, and electrical.
+              A registered Indian company dedicated to providing high-quality professional services across real estate, finance, and insurance sectors.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition-colors">
@@ -147,6 +148,7 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
               <li><button onClick={() => setCurrentPage('about')} className="hover:text-brand-400 transition-colors">About Us</button></li>
               <li><button onClick={() => setCurrentPage('services')} className="hover:text-brand-400 transition-colors">Services</button></li>
               <li><button onClick={() => setCurrentPage('products')} className="hover:text-brand-400 transition-colors">Products</button></li>
+              <li><button onClick={() => setCurrentPage('certificates')} className="hover:text-brand-400 transition-colors">Certificates</button></li>
               <li><button onClick={() => setCurrentPage('contact')} className="hover:text-brand-400 transition-colors">Contact</button></li>
             </ul>
           </div>
@@ -154,10 +156,8 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
           <div>
             <h4 className="text-white font-semibold mb-6 uppercase text-xs tracking-widest">Business Areas</h4>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li>Solar Projects</li>
-              <li>Civil Works</li>
-              <li>Electrical & Electronics</li>
-              <li>Import & Export</li>
+              <li>Finance Services</li>
+              <li>Insurance Services</li>
               <li>Real Estate Services</li>
             </ul>
           </div>
@@ -171,7 +171,7 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="text-brand-500 mr-3 shrink-0" />
-                <span>+91 XXXXX XXXXX</span>
+                <span>+91 63017 21221</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="text-brand-500 mr-3 shrink-0" />
@@ -197,11 +197,9 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
 
 const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
   const services = [
-    { title: 'Solar Projects', icon: <Zap size={24} />, desc: 'Sustainable energy solutions for residential and commercial needs.' },
-    { title: 'Civil Works', icon: <HardHat size={24} />, desc: 'Professional construction and infrastructure development services.' },
-    { title: 'Electrical & Electronics', icon: <Cpu size={24} />, desc: 'Advanced electrical systems and consumer electronic equipments.' },
-    { title: 'Import & Export', icon: <Globe size={24} />, desc: 'Global trade solutions and supply chain management.' },
-    { title: 'Real Estate Services', icon: <HomeIcon size={24} />, desc: 'Comprehensive property management and real estate consulting.' },
+    { title: 'Real Estate Services', icon: <HomeIcon size={24} />, desc: 'Property advisory and support for residential and commercial needs.' },
+    { title: 'Finance Services', icon: <ShieldCheck size={24} />, desc: 'Structured financial guidance with end-to-end coordination.' },
+    { title: 'Insurance Services', icon: <ShieldCheck size={24} />, desc: 'Coverage advisory and policy support tailored to client needs.' },
   ];
 
   return (
@@ -232,7 +230,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
               transition={{ delay: 0.2 }}
               className="text-lg text-slate-600 mb-10 max-w-2xl leading-relaxed"
             >
-              Nandan Consumer Equipments Private Limited is a multi-disciplinary corporate entity providing professional solutions in Solar, Civil, Electrical, and Global Trade sectors.
+              Nandan Consumer Equipments Private Limited provides professional services across Real Estate, Finance, and Insurance sectors with a focus on reliability and transparency.
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -272,11 +270,11 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
             </div>
             <div>
               <h2 className="text-3xl font-bold text-slate-900 mb-6">A Legacy of Trust and Professionalism</h2>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Nandan Consumer Equipments Private Limited is a registered Indian company based in Hyderabad. We pride ourselves on our multi-disciplinary approach, bringing together expertise from various technical and commercial fields to serve our clients better.
-              </p>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Nandan Consumer Equipments Private Limited is a registered Indian company based in Hyderabad. We focus on delivering trusted real estate, finance, and insurance services with a professional, client-first approach.
+                </p>
               <p className="text-slate-600 mb-8 leading-relaxed">
-                Our commitment to quality and customer satisfaction has made us a preferred partner for solar installations, civil construction, and electrical equipment supply across the region.
+                Our commitment to quality and customer satisfaction has made us a preferred partner for real estate, finance, and insurance services across the region.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center space-x-3">
@@ -300,10 +298,10 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
       {/* Business Areas */}
       <section className="py-24 bg-slate-50/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Business Areas</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">We operate across diverse sectors, providing specialized services tailored to meet the evolving needs of our clients.</p>
-          </div>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Business Areas</h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">We focus on core service areas tailored to meet the evolving needs of our clients.</p>
+            </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, idx) => (
               <div key={idx} className="bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all group">
@@ -423,7 +421,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => 
             </button>
             <div className="flex items-center text-slate-700 font-semibold">
               <Phone size={20} className="mr-2 text-brand-600" />
-              <span>+91 XXXXX XXXXX</span>
+              <span>+91 63017 21221</span>
             </div>
           </div>
         </div>
@@ -452,21 +450,21 @@ const AboutPage = () => {
                   NANDAN CONSUMER EQUIPMENTS PRIVATE LIMITED is a registered corporate entity based in Hyderabad, India. Founded with a vision to provide integrated solutions across multiple industrial and consumer sectors, we have grown into a trusted name for quality and reliability.
                 </p>
                 <p>
-                  Our expertise spans across Solar Energy Projects, Civil Construction, Electrical & Electronics, Global Trade (Import/Export), and Real Estate Services. This diverse portfolio allows us to offer comprehensive solutions to our clients, ensuring they have a single point of contact for their complex needs.
+                  Our expertise spans Real Estate Services, Finance Services, and Insurance Services. This focused portfolio allows us to offer comprehensive solutions with a single point of contact and clear accountability.
                 </p>
                 <p>
-                  We operate with a professional approach, leveraging modern technology and industry best practices to deliver projects on time and within budget.
+                  We operate with a professional approach, leveraging best practices to deliver services on time with transparent communication.
                 </p>
               </div>
             </div>
             <div className="space-y-8">
               <div className="bg-white/90 p-8 rounded-2xl border border-slate-100">
                 <h3 className="text-xl font-bold text-brand-700 mb-4">Our Vision</h3>
-                <p className="text-slate-600">To be a leading multi-disciplinary corporate entity in India, recognized for innovation, sustainability, and excellence in providing consumer equipments and professional services.</p>
+                <p className="text-slate-600">To be a leading professional services company in India, recognized for trust, transparency, and excellence in real estate, finance, and insurance services.</p>
               </div>
               <div className="bg-white/90 p-8 rounded-2xl border border-slate-100">
                 <h3 className="text-xl font-bold text-brand-700 mb-4">Our Mission</h3>
-                <p className="text-slate-600">To empower our clients through high-quality technical solutions, foster sustainable development through solar energy, and maintain the highest standards of professionalism in every sector we operate.</p>
+                <p className="text-slate-600">To empower our clients through reliable real estate, finance, and insurance services while maintaining the highest standards of professionalism and transparency.</p>
               </div>
             </div>
           </div>
@@ -502,6 +500,141 @@ const AboutPage = () => {
   );
 };
 
+const ServicesPage = ({ setCurrentPage }: { setCurrentPage: (p: Page) => void }) => {
+  const serviceList = [
+    {
+      title: 'Real Estate Services',
+      icon: <HomeIcon size={24} />,
+      desc: 'End-to-end real estate support for residential, commercial, and industrial needs with a focus on transparent processes.',
+      points: ['Property advisory and sourcing', 'Documentation support', 'Site visits and valuation guidance'],
+    },
+    {
+      title: 'Finance Services',
+      icon: <ShieldCheck size={24} />,
+      desc: 'Project and asset-focused financial guidance to help clients structure funding with clarity and confidence.',
+      points: ['Requirement assessment', 'Documentation assistance', 'End-to-end coordination'],
+    },
+    {
+      title: 'Insurance Services',
+      icon: <ShieldCheck size={24} />,
+      desc: 'Insurance consulting and policy support tailored to client needs across assets and operations.',
+      points: ['Coverage advisory', 'Claim support guidance', 'Policy renewal support'],
+    },
+  ];
+
+  return (
+    <div className="pt-20">
+      <section className="bg-slate-900 py-20 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold mb-4">Services</h1>
+          <p className="text-slate-400 max-w-3xl">
+            We provide professional services across real estate, finance, and insurance domains. Our team focuses on clarity, compliance, and reliable delivery for every engagement.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">What We Offer</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Structured service delivery backed by experienced professionals and a commitment to quality.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {serviceList.map((service, idx) => (
+              <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div className="w-14 h-14 bg-brand-50 rounded-lg flex items-center justify-center text-brand-600 mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">{service.desc}</p>
+                <ul className="text-sm text-slate-600 space-y-2">
+                  {service.points.map((point, pIdx) => (
+                    <li key={pIdx} className="flex items-start">
+                      <span className="mt-1.5 mr-2 h-1.5 w-1.5 rounded-full bg-brand-500" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-slate-50/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">How We Work</h2>
+              <p className="text-slate-600 mb-6 leading-relaxed">
+                Our process is designed to be transparent and client-first. We begin with requirement mapping, move to structured planning, and execute with consistent updates at every milestone.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="w-9 h-9 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center mr-4">1</div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Requirement Mapping</h4>
+                    <p className="text-sm text-slate-600">We capture scope, timelines, and compliance needs early to avoid surprises later.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-9 h-9 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center mr-4">2</div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Planning & Coordination</h4>
+                    <p className="text-sm text-slate-600">Dedicated coordination for documentation, approvals, and service scheduling.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-9 h-9 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center mr-4">3</div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Execution & Support</h4>
+                    <p className="text-sm text-slate-600">Consistent progress updates with post-service guidance and assistance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-10 rounded-3xl border border-slate-200 shadow-xl shadow-slate-100">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Service Highlights</h3>
+              <div className="space-y-5 text-sm text-slate-600">
+                <div className="flex items-start">
+                  <ShieldCheck size={18} className="text-brand-600 mr-3 mt-1" />
+                  <span>Professional handling with attention to compliance and documentation quality.</span>
+                </div>
+                <div className="flex items-start">
+                  <ShieldCheck size={18} className="text-brand-600 mr-3 mt-1" />
+                  <span>Clear communication across project stages with predictable timelines.</span>
+                </div>
+                <div className="flex items-start">
+                  <ShieldCheck size={18} className="text-brand-600 mr-3 mt-1" />
+                  <span>Single-window coordination for multi-service requirements.</span>
+                </div>
+                <div className="flex items-start">
+                  <ShieldCheck size={18} className="text-brand-600 mr-3 mt-1" />
+                  <span>Trusted delivery backed by experienced teams and partners.</span>
+                </div>
+              </div>
+              <div className="mt-10">
+                <button
+                  onClick={() => setCurrentPage('contact')}
+                  className="w-full bg-brand-600 text-white py-4 rounded-lg font-bold hover:bg-brand-700 transition-all shadow-lg shadow-brand-100"
+                >
+                  Request a Consultation
+                </button>
+                <div className="mt-4 flex items-center justify-center text-slate-600 font-semibold">
+                  <Phone size={18} className="mr-2 text-brand-600" />
+                  <span>+91 63017 21221</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
 const ComingSoonPage = ({ title }: { title: string }) => {
   return (
     <div className="pt-20 min-h-[70vh] flex items-center justify-center bg-slate-50/70">
@@ -517,7 +650,7 @@ const ComingSoonPage = ({ title }: { title: string }) => {
         </p>
         <div className="mt-12 p-6 bg-white rounded-xl border border-slate-200 shadow-sm inline-block">
           <p className="text-sm font-semibold text-slate-700">For immediate assistance, call us at:</p>
-          <p className="text-brand-600 font-bold text-lg">+91 XXXXX XXXXX</p>
+          <p className="text-brand-600 font-bold text-lg">+91 63017 21221</p>
         </div>
       </div>
     </div>
@@ -571,7 +704,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-800 mb-1">Phone Number</h4>
-                      <p className="text-slate-600 text-sm">+91 XXXXX XXXXX</p>
+                      <p className="text-slate-600 text-sm">+91 63017 21221</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -632,7 +765,7 @@ const ContactPage = () => {
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all"
-                      placeholder="+91 XXXXX XXXXX"
+                      placeholder="+91 63017 21221"
                     />
                   </div>
                   <div className="space-y-2">
@@ -725,6 +858,70 @@ const PrivacyPolicyPage = () => {
   );
 };
 
+const CertificatesPage = () => {
+  const certificates = [
+    {
+      title: 'GST Registration',
+      desc: 'Official GST registration certificate for company operations.',
+      status: 'Available on request',
+    },
+    {
+      title: 'MSME Registration',
+      desc: 'MSME registration certificate for compliance and business eligibility.',
+      status: 'Available on request',
+    },
+    {
+      title: 'Company Incorporation',
+      desc: 'Certificate of incorporation confirming legal entity status.',
+      status: 'Available on request',
+    },
+  ];
+
+  return (
+    <div className="pt-20">
+      <section className="bg-slate-900 py-20 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold mb-4">Certificates</h1>
+          <p className="text-slate-400 max-w-3xl">
+            Below is a summary of our key registrations and certificates. Copies can be shared upon request.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {certificates.map((item, idx) => (
+              <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">{item.desc}</p>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 text-brand-700">
+                  {item.status}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 p-8 rounded-2xl border border-slate-200 bg-slate-50/70 text-center">
+            <h4 className="text-lg font-bold text-slate-900 mb-2">Need a Certificate Copy?</h4>
+            <p className="text-slate-600 mb-6">Contact us to request official copies or verification.</p>
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+              <div className="flex items-center text-slate-700 font-semibold">
+                <Phone size={18} className="mr-2 text-brand-600" />
+                <span>+91 63017 21221</span>
+              </div>
+              <div className="flex items-center text-slate-700 font-semibold">
+                <Mail size={18} className="mr-2 text-brand-600" />
+                <span>info@nandanconsumer.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
 // --- Main App ---
 
 export default function App() {
@@ -738,8 +935,9 @@ export default function App() {
     switch (currentPage) {
       case 'home': return <HomePage setCurrentPage={setCurrentPage} />;
       case 'about': return <AboutPage />;
-      case 'services': return <ComingSoonPage title="Services" />;
+      case 'services': return <ServicesPage setCurrentPage={setCurrentPage} />;
       case 'products': return <ComingSoonPage title="Products" />;
+      case 'certificates': return <CertificatesPage />;
       case 'contact': return <ContactPage />;
       case 'privacy': return <PrivacyPolicyPage />;
       default: return <HomePage setCurrentPage={setCurrentPage} />;
